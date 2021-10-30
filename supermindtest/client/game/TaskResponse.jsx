@@ -14,7 +14,6 @@ export default class TaskResponse extends React.Component {
     this.props.player.stage.submit();
   };
 
-
   renderContent() {
     const { player } = this.props;
     console.log(player);
@@ -28,27 +27,19 @@ export default class TaskResponse extends React.Component {
         value={this.value}
         onChange={this.handleChange}
       />
-
     );
   }
 
-
-
   render() {
-    const { player, stage } = this.props;
-  
+    //const { player, stage } = this.props;
 
     return (
       <div className="task-response">
-        
         <form onSubmit={this.handleSubmit}>
-        
           {this.renderContent()}
           <p></p>
-          
           <button type="submit">Submit</button>
         </form>
-        
       </div>
     );
     

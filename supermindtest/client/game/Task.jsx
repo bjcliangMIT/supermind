@@ -1,15 +1,23 @@
 import React from "react";
 
 import TaskResponse from "./TaskResponse";
-import {TaskStimulusH, TaskStimulusD, TaskStimulusM, TaskStimulusC, 
-  TaskStimulusE, TaskStimulusF} from "./TaskStimulus";
+import {
+  TaskStimulusH, 
+  TaskStimulusD, 
+  TaskStimulusM, 
+  TaskStimulusC,
+  TaskStimulusE, 
+  TaskStimulusF
+} from "./TaskStimulus";
 
-import {TaskStimulusH_collapsed,
-  TaskStimulusD_collapsed, 
+import {
+  TaskStimulusH_collapsed,
+  TaskStimulusD_collapsed,
   TaskStimulusC_collapsed,
   TaskStimulusM_collapsed,
-  TaskStimulusE_collapsed,} from "./TaskStimulus2";
-  
+  TaskStimulusE_collapsed,
+} from "./TaskStimulus2";
+
 
 class TaskH extends React.Component {
   render() {
@@ -30,8 +38,6 @@ class TaskH_intro extends React.Component {
     );
   }
 }
-
-
 
 class TaskF extends React.Component {
   render() {
@@ -124,12 +130,7 @@ class TaskE_intro extends React.Component {
   }
 }
 
-
-
-
-
 export {
-  TaskIntro,
   TaskH,
   TaskD,
   TaskM,

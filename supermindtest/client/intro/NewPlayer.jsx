@@ -11,7 +11,6 @@ export default class NewPlayer extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
     const { handleNewPlayer } = this.props;
     const { id } = this.state;
     handleNewPlayer(id);
@@ -25,10 +24,7 @@ export default class NewPlayer extends Component {
         <div >
           <form onSubmit={this.handleSubmit}>
             <h1>Identification</h1>
-
-            <p>
-              Please enter your id:
-                        </p>
+            <p>Please enter your id:</p>
 
             <input
               dir="auto"
@@ -42,10 +38,7 @@ export default class NewPlayer extends Component {
             />
 
             <br />
-
-            <p>
-              <button type="submit">Submit</button>
-            </p>
+            <p><button type="submit">Submit</button></p>
 
           </form>
         </div>
