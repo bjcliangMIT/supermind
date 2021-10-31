@@ -66,10 +66,12 @@ class TaskStimulusD_collapsed extends React.Component {
           <summary className="summary"><b> [Click Me] Introduction Recap</b></summary>
           <div className="collapse-content">
             <p>
-              <b>Theoretical Information</b>: Another way that humans can organize themselves is through democracies, 
-              where group decisions are made by voting. When you are trying to think of new solutions to a 
-              problem, try asking a question like “how would the same group of people organized in a 
-              democracy try to solve this problem?” In our earlier problem about improving access 
+              <b>Theoretical Information</b>: Many problems are not solved alone,
+              but by many humans who have organized themselves in one of five ways.
+              One way is through democracies,
+              where group decisions are made by voting. When you are trying to think of new solutions to a
+              problem, try asking a question like “how would the same group of people organized in a
+              democracy try to solve this problem?” In our earlier problem about improving access
               to healthy food, one solution could be:
             </p>
             <p>
@@ -104,10 +106,11 @@ class TaskStimulusM_collapsed extends React.Component {
           <summary className="summary"><b> [Click Me] Introduction Recap</b></summary>
           <div className="collapse-content">
             <p>
-              <b>Theoretical Information</b>: Another way that humans can organize themselves i
-              s through markets, where group decisions are the sum of all the pairwise agreements between 
-              individual buyers and sellers. When you are trying to think of new solutions to a problem, 
-              try asking a question like “how would the same group of people organized in a market try to 
+              <b>Theoretical Information</b>: Many problems are not solved alone,
+              but by many humans who have organized themselves in one of five ways.
+              One way is through markets, where group decisions are the sum of all the pairwise agreements between
+              individual buyers and sellers. When you are trying to think of new solutions to a problem,
+              try asking a question like “how would the same group of people organized in a market try to
               solve this problem?” In our earlier problem about improving access to healthy food, one solution could be:
             </p>
             <p>
@@ -149,7 +152,9 @@ class TaskStimulusC_collapsed extends React.Component {
           <div className="collapse-content">
 
             <p>
-              <b>Theoretical Information</b>: Another way that humans can organize themselves is through communities, where group decisions are made by a kind of informal consensus based on shared norms and reputations. When you are trying to think of new solutions to a problem, try asking a question like “how would the same group of people organized in a community try to solve this problem?” In our earlier problem about improving access to healthy food, one solution could be:
+              <b>Theoretical Information</b>: Many problems are not solved alone,
+              but by many humans who have organized themselves in one of five ways.
+              One way is through communities, where group decisions are made by a kind of informal consensus based on shared norms and reputations. When you are trying to think of new solutions to a problem, try asking a question like “how would the same group of people organized in a community try to solve this problem?” In our earlier problem about improving access to healthy food, one solution could be:
 
             </p>
 
@@ -187,7 +192,9 @@ class TaskStimulusE_collapsed extends React.Component {
           <summary className="summary"><b> [Click Me] Introduction Recap</b></summary>
           <div className="collapse-content">
             <p>
-              <b>Theoretical Information</b>: Another way that humans can organize themselves is through ecosystems, where group decisions are made by the law of the jungle (whoever has the most power gets what they want) and the survival of the fittest. When you are trying to think of new solutions to a problem, try asking a question like “how would the same group of people organized in an ecosystem try to solve this problem?” In our earlier problem about improving access to healthy food, one solution could be:
+              <b>Theoretical Information</b>: Many problems are not solved alone,
+              but by many humans who have organized themselves in one of five ways.
+              One way is through ecosystems, where group decisions are made by the law of the jungle (whoever has the most power gets what they want) and the survival of the fittest. When you are trying to think of new solutions to a problem, try asking a question like “how would the same group of people organized in an ecosystem try to solve this problem?” In our earlier problem about improving access to healthy food, one solution could be:
             </p>
             <p>
               <em>Having the town’s information uploaded to an online ecosystem of grocery companies and food distributors will naturally lead to an increase in food access.</em>

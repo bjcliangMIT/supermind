@@ -20,7 +20,9 @@ export default class ExitSurvey extends React.Component {
   static stepName = "ExitSurvey";
   state = {
     strength: "", fair: "", feedback: "", instruction: "",
-    feeling_nervous: "", feeling_satisfied: "", feeling_relaxed: "", feeling_excited: ""
+    relevant: "", whyfeeling: "",
+    feeling_nervous: "", feeling_confused: "",
+    feeling_relaxed: "", feeling_excited: ""
   };
 
 
@@ -60,18 +62,23 @@ export default class ExitSurvey extends React.Component {
   };
 
   renderLabel = (val) => {
-    if (val === 1) {return "Weak";}
-    if (val === 5) {return "Strong";}
+    if (val === 1) {
+      return "Weak";
+    }
+    if (val === 5) {
+      return "Strong";
+    }
     return val
   };
 
 
   render() {
     const { player } = this.props;
-    const { strength, fair, feedback, instruction } = this.state;
+    const { strength, fair, feedback, instruction, relevant,
+      whyfeeling } = this.state;
 
     this.state.feeling_nervous = player.get("feeling_nervous")
-    this.state.feeling_satisfied = player.get("feeling_satisfied")
+    this.state.feeling_confused = player.get("feeling_confused")
     this.state.feeling_relaxed = player.get("feeling_relaxed")
     this.state.feeling_excited = player.get("feeling_excited")
 
@@ -98,7 +105,6 @@ export default class ExitSurvey extends React.Component {
 
           <form onSubmit={this.handleSubmit}>
             <ol type="1">
-
               <div >
                 <label><li> In general, how hard was it for you to understand and
                   follow the instructions? &nbsp;</li> </label>
@@ -125,8 +131,8 @@ export default class ExitSurvey extends React.Component {
                   </div>
 
                   <div className='slider'>
-                    <label htmlFor="feeling">Satisfied
-                      {this.renderSlider("feeling_satisfied")}</label>
+                    <label htmlFor="feeling">Confused
+                      {this.renderSlider("feeling_confused")}</label>
                   </div>
                 </div>
                 <div className="form-line">
@@ -143,6 +149,33 @@ export default class ExitSurvey extends React.Component {
                 </div>
               </div>
 
+              <div>
+                <li><label> If your answer is "strong" to one or more
+                  of the feelings above, could you please specify why? </label></li>
+                <div>
+                  <textarea
+                    dir="auto"
+                    row="70"
+                    col="3"
+                    id="whyfeeling"
+                    name="whyfeeling"
+                    value={whyfeeling}
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <li><label> As far as you can recall, have you ever been thinking
+                  about how to solve a similar problem as the one you just saw? </label></li>
+                <select name="relevant" id="relevant" value={relevant} onChange={this.handleChange}>
+                  <option value="empty"> </option>
+                  <option value="always"> Yes, I think about it all the time. </option>
+                  <option value="sometimes"> Yes, sometimes. </option>
+                  <option value="once"> Hard to tell, maybe once or twice. </option>
+                  <option value="never"> Not really. </option>
+                </select>
+              </div>
 
               <div className="form-line thirds">
                 <div>

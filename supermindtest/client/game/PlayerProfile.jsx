@@ -30,8 +30,8 @@ export default class PlayerProfile extends React.Component {
     const { player } = this.props;
     return (
       <div className="profile-score">
-        <h4>Outlines</h4>
-        <p>Hierarchy, Democracy, Markets, Community, Ecosystem</p>
+        <h4>Goal of the Research</h4>
+        <p>Explore ways to Generate Creative Ideas.</p>
       </div>
     );
   }
