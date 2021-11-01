@@ -144,19 +144,6 @@ export default class IntroSurvey extends React.Component {
                 </select>
               </div>
 
-              <div>
-                <li><label> As far as you can recall, have you ever been thinking
-                  about how to solve a similar problem as the one you just saw? </label></li>
-
-                <select name="relevant" id="relevant" value={relevant} onChange={this.handleChange}>
-                  <option value="empty"> </option>
-                  <option value="always"> Yes, I think about it all the time. </option>
-                  <option value="sometimes"> Yes, sometimes. </option>
-                  <option value="once"> Hard to tell, maybe once or twice. </option>
-                  <option value="never"> Not really. </option>
-                </select>
-              </div>
-
             </ol>
             <button type="submit">Submit</button>
           </form>
