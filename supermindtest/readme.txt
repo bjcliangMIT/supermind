@@ -1,1 +1,0 @@
-mongosh "mongodb+srv://cluster0.csh4f.mongodb.net/supermind_test" --bjcliang bjcliang1

@@ -87,21 +87,12 @@ export default class ExitSurvey extends React.Component {
 
         <div className="exit-survey">
 
-          <h1> Exit Survey </h1>
+          <h1> Game Survey</h1>
 
-          <p>
-            Please submit the following code to receive your bonus:{" "}<strong>{player._id}</strong>.
-          </p>
-          <p>
-            You final <strong>bonus</strong> is in addition of the{" "}
-            <strong>1 base reward</strong> for completing the HIT.
-          </p>
-          <br />
           <p>
             Please answer the following short survey. You do not have to provide
             any information you feel uncomfortable with.
           </p>
-
 
           <form onSubmit={this.handleSubmit}>
             <ol type="1">
@@ -154,9 +145,8 @@ export default class ExitSurvey extends React.Component {
                   of the feelings above, could you please specify why? </label></li>
                 <div>
                   <textarea
-                    dir="auto"
-                    row="70"
-                    col="3"
+                    rows="4" 
+                    cols="50"
                     id="whyfeeling"
                     name="whyfeeling"
                     value={whyfeeling}
@@ -192,18 +182,7 @@ export default class ExitSurvey extends React.Component {
                     />
                   </div>
                 </div>
-                <div>
-                  <label htmlFor="fair"> <li>Do you feel the pay was fair?</li></label>
-                  <div>
-                    <textarea
-                      dir="auto"
-                      id="fair"
-                      name="fair"
-                      value={fair}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                </div>
+               
                 <div>
                   <label htmlFor="feedback">
                     <li>Feedback, including problems you encountered.</li>

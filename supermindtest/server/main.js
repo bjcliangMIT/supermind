@@ -14,34 +14,45 @@ Empirica.gameInit(game => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", "");
 
-    var stage_list = ['Hierarchy', 'Democracy', 'Community', 'Ecosystem', 'Market']; 
+
+    var stage_list = ['Hierarchy', 'Democracy', 'Community', 'Market']; 
 
     _.times(1, i => {
       const round = game.addRound();
       //const time = 5*60*10000;
-      const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
+      //const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
       //const stage_selected = "Ecosystem"
 
       if(game.treatment.isGroupify==true){
+        
         round.addStage({
-          name: stage_selected+"_script",
-          displayName: "Introduction",
+          name: 'IntroTask',
+          displayName: "IntroTask",
           durationInSeconds: 5*60
         });
-  
-        round.addStage({
-          name: stage_selected,
-          displayName: "Practice",
-          durationInSeconds: 1*60
+
+        stage_list.forEach((selected) => {
+          round.addStage({
+            name: selected+"_script",
+            displayName: selected,
+            durationInSeconds: 2*60
+          });
+          round.addStage({
+            name: selected, 
+            displayName: " ", 
+            durationInSeconds: 1*60
+          });
         });
 
+        round.addStage({
+          name: 'ExitTask',
+          displayName: "ExitTask",
+          durationInSeconds: 5*60
+        });
+        
       }
 
-      round.addStage({
-        name: 'Complete',
-        displayName: "Task",
-        durationInSeconds: 5*60
-      });
+      
     });
   });
 

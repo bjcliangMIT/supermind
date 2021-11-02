@@ -41,8 +41,6 @@ export default class PlayerProfile extends React.Component {
 
     return (
       <aside className="player-profile">
-        {this.renderProfile()}
-        {this.renderOutline()}
         <Timer stage={stage} />
       </aside>
     );

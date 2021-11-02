@@ -35,7 +35,8 @@ export default class IntroSurvey extends React.Component {
     if (this.state.age < 18 || this.state.age > 100) {
       alert("Please try again and enter a valid age.");
     } else {
-      this.props.onNext();
+      //this.props.onNext();
+      this.props.onSubmit(this.state);
     }
   };
 
@@ -47,7 +48,7 @@ export default class IntroSurvey extends React.Component {
     return (
       <Centered>
         <div className="intro-survey">
-          <h1> Introduction Survey </h1>
+          <h1> Demographics Survey </h1>
           <p>
             Please answer the following short survey. You do not have to provide
             any information you feel uncomfortable with.

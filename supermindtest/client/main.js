@@ -13,7 +13,7 @@ import NewPlayer from "./intro/NewPlayer";
 import IntroSurvey from "./intro/IntroSurvey";
 
 // Set the About Component you want to use for the About dialog (optional).
-Empirica.about(About);
+//Empirica.about(About);
 
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
@@ -26,7 +26,7 @@ Empirica.newPlayer(NewPlayer);
 // At this point they have been assigned a treatment. You can return
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment, player) => {
-const steps = [InstructionStepOne, IntroSurvey];
+const steps = [InstructionStepOne];
   if (treatment.isGroupify==true) {
     steps.push(InstructionGroupify);
   }
@@ -55,7 +55,7 @@ Empirica.exitSteps((game, player) => {
   ) {
     return [Sorry];
   }
-  return [ExitSurvey, Thanks];
+  return [ExitSurvey, IntroSurvey, Thanks];
 });
 
 // Start the app render tree.

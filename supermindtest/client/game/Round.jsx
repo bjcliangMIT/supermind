@@ -25,7 +25,9 @@ export default class Round extends React.Component {
             {stage.name === "Market_script" && <TaskM_intro game={game} round={round} stage={stage} player={player} />}
             {stage.name === "Ecosystem_script" && <TaskE_intro game={game} round={round} stage={stage} player={player} />}
   
-            {stage.name === "Complete" && <TaskF game={game} round={round} stage={stage} player={player} />}
+            {stage.name === "ExitTask" && <TaskF game={game} round={round} stage={stage} player={player} />}
+            {stage.name === "IntroTask" && <TaskF game={game} round={round} stage={stage} player={player} />}
+
           </div>
         </div>
       );

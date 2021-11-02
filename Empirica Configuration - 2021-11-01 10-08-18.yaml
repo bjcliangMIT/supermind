@@ -1,0 +1,40 @@
+treatments:
+  - name: isGroupify
+    factorIds:
+      - 2a4ov5oicHGfyq7Fg
+      - sxHpae4Ci9WTkkGx2
+  - name: notGroupify
+    factorIds:
+      - 2a4ov5oicHGfyq7Fg
+      - zXypZTgNrmvPafHJh
+factorTypes:
+  - _id: yiC5dpQ6Xw3WHGnqE
+    name: playerCount
+    description: The Number of players participating in the given game.
+    required: true
+    type: Integer
+    min: 1
+  - _id: ScGDDR2jPmYCPoNWA
+    name: isGroupify
+    description: whether groupify is assigned
+    required: false
+    type: Boolean
+factors:
+  - _id: 2a4ov5oicHGfyq7Fg
+    name: solo
+    value: 1
+    factorTypeId: yiC5dpQ6Xw3WHGnqE
+  - _id: sxHpae4Ci9WTkkGx2
+    name: groupify
+    value: true
+    factorTypeId: ScGDDR2jPmYCPoNWA
+  - _id: zXypZTgNrmvPafHJh
+    name: control
+    value: false
+    factorTypeId: ScGDDR2jPmYCPoNWA
+lobbyConfigs:
+  - name: default
+    timeoutType: lobby
+    timeoutInSeconds: 300
+    timeoutStrategy: fail
+    gameLobbyIds: []
