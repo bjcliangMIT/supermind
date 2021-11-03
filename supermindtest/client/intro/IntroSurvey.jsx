@@ -18,7 +18,7 @@ const Radio = ({ selected, name, value, label, onChange }) => (
 export default class IntroSurvey extends React.Component {
   static stepName = "IntroSurvey";
   state = {
-    age: "", gender: "", education: "", race: "",
+    age: "NA", gender: "", education: "", race: "",
     employed: "", government: "", polviews: "", relevant: ""
   };
 

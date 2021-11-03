@@ -1,1 +1,10 @@
 control conditions
+
+Introduction
+2 mins solve a problem
+
+for each move{
+    2 min reading
+    1 min solution
+}
+

@@ -25,7 +25,12 @@ Empirica.onStageEnd((game, round, stage) => {
     const value = player.round.get("value") || "";
     const prevScore = player.get("score") || "";
     const stage_name = stage.name
-    player.set("score", prevScore + "\nStage [" + stage_name + "]: " + value);
+    if(stage_name.includes("_script")){
+      player.set("score", prevScore);
+    }else{
+      player.set("score", prevScore + "\nStage [" + stage_name + "]: " + value);
+    }
+    
   });
 });
 

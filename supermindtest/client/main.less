@@ -69,11 +69,26 @@
       line-height: 1.5;
 
       form {
-        width: 40rem;
 
         button[type="submit"] {
           margin-top: 2rem;
         }
+        button[type="add"] {
+          margin-top: 0.5rem;
+          margin-bottom: 2rem;
+        }
+        div{
+          display: flex;
+          button[type="delete"] {
+            margin-top: 2rem;
+            margin-left: 2rem;
+          }
+          textarea{
+            margin-top: 1rem;
+          }
+
+        }
+        
       }
 
       .response-submitted {
@@ -178,10 +193,6 @@ button {
 
 .exit-survey {
   margin-left: 20px;
-
-  .for-textarea{
-    width: 100%;
-  }
 
   .form-line {
     display: flex;
