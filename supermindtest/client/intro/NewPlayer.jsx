@@ -21,7 +21,7 @@ export default class NewPlayer extends Component {
 
     return (
       <Centered>
-        <div >
+        <div className="instructions">
           <form onSubmit={this.handleSubmit}>
             <h1>Identification</h1>
             <p>Please enter your id:</p>
@@ -37,8 +37,8 @@ export default class NewPlayer extends Component {
               autoComplete="off"
             />
 
-            <br />
-            <p><button type="submit">Submit</button></p>
+            
+            <button type="submit">Submit</button>
 
           </form>
         </div>

@@ -1,35 +1,35 @@
 import React from "react";
 export default class TaskResponse extends React.Component {
-  state = { questions: [''] }
+  state = { solutions: [''] }
 
   handleText = i => e => {
-    let questions = [...this.state.questions]
-    questions[i] = e.target.value
-    this.setState({questions})
+    let solutions = [...this.state.solutions]
+    solutions[i] = e.target.value
+    this.setState({ solutions })
     const { player, stage } = this.props;
-    player.round.set("value", this.state.questions);
+    player.round.set("value", this.state.solutions);
   }
 
   handleDelete = i => e => {
     e.preventDefault()
-    let questions = [
-      ...this.state.questions.slice(0, i),
-      ...this.state.questions.slice(i + 1)
+    let solutions = [
+      ...this.state.solutions.slice(0, i),
+      ...this.state.solutions.slice(i + 1)
     ]
-    this.setState({questions})
+    this.setState({ solutions })
   }
 
-  addQuestion = e => {
+  addSolution = e => {
     e.preventDefault()
-    let questions = this.state.questions.concat([''])
-    this.setState({questions})
-    
+    let solutions = this.state.solutions.concat([''])
+    this.setState({ solutions })
+
   }
 
   handleSubmit = event => {
     event.preventDefault();
     const { player } = this.props;
-    player.round.set("value", this.state.questions);
+    player.round.set("value", this.state.solutions);
     //console.log(player.get("answer"))
     this.props.player.stage.submit(this.state);
   };
@@ -55,24 +55,25 @@ export default class TaskResponse extends React.Component {
     return (
       <div className="task-response">
         <form onSubmit={this.handleSubmit}>
-        <button type="add" onClick={this.addQuestion}>Add a New Solution</button>
-          {this.state.questions.map((question, index) => (
-            
+          <button type="add" onClick={this.addSolution}>Add a New Solution</button>
+          <br></br><br></br><br></br>
+
+          {this.state.solutions.map((solutions, index) => (
             <div key={index}>
-              <textarea 
+              <textarea
                 dir="auto"
                 rows="3"
-                cols="80"
+                cols="100"
                 placeholder='Enter your solution here.'
-                value={question}
+                value={solutions}
                 onChange={this.handleText(index)}
               />
               <button type="delete" onClick={this.handleDelete(index)}>Delete</button>
             </div>
           ))
           }
-          
-          <button type="submit">Submit</button>
+          <br></br><br></br>
+          <button type="submit">Submit and Proceed to the Next Page</button>
         </form>
       </div>
     );

@@ -10,6 +10,7 @@ export default class Thanks extends React.Component {
     return (
       <div className="exit-survey">
         <div>
+          <br></br>
           <h2>Finished!</h2>
 
           <p>

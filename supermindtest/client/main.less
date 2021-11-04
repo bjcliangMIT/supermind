@@ -13,7 +13,7 @@
   .player-profile {
     display: flex;
     flex-direction: column;
-    width: 27rem;
+    width: 15rem;
     min-height: 100%;
     align-items: center;
     padding: 3rem 4rem;
@@ -57,11 +57,17 @@
   }
 
   .task {
+    width: 80rem;
     align-content: right;
     padding: 4rem 4rem 0 4rem;
 
     .task-stimulus {
       line-height: 1.5;
+      button[type="submit"] {
+        margin-top: 3rem;
+        margin-right: 0;
+        float: right
+      }
     }
 
     .task-response {
@@ -71,20 +77,26 @@
       form {
 
         button[type="submit"] {
-          margin-top: 2rem;
+          margin-top: 3rem;
+          margin-right: 0;
+          float: right
         }
+
         button[type="add"] {
           margin-top: 0.5rem;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
+          margin-right: 0;
+          float: right
         }
         div{
           display: flex;
           button[type="delete"] {
-            margin-top: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
             margin-left: 2rem;
           }
           textarea{
-            margin-top: 1rem;
+            margin-bottom: 2rem;
           }
 
         }
@@ -135,11 +147,20 @@ button {
   &:hover {
     background-color: #ddd;
   }
+
 }
 
 .instructions{
   font-size: 1.5rem;
+  width: 80rem;
   line-height: 2;
+
+  button[type="button"] {
+    margin-right: 0;
+    margin-left: 1rem;
+    float: right
+  }
+      
 }
 
 .summary{
@@ -159,6 +180,8 @@ button {
 .exit-survey {
   button {
     margin: 2rem 1rem 0 0;
+    margin-right: 0;
+    float: right
   }
 
   label {
@@ -190,12 +213,13 @@ button {
   
 }
 
-
 .exit-survey {
-  margin-left: 20px;
+  margin-left: 10rem;
+  width: 80rem;
 
   .form-line {
     display: flex;
+    
 
     & > div {
       margin-right: 50px;
@@ -203,7 +227,7 @@ button {
       textarea {
         margin-left: -5px;
         min-height: 90px;
-        width: 100%;
+        width: 35rem;
       }
     }
     
@@ -222,8 +246,14 @@ button {
 }
 
 .intro-survey {
-  align-content: right;
+  align-content: center;
   line-height: 2;
+  width: 80rem;
+  button {
+    margin: 2rem 1rem 0 0;
+    margin-right: 0;
+    float: right;
+  }
 
   .form-line {
     display: flex;
@@ -237,13 +267,8 @@ button {
   }
 }
 
-.finished {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
+.consent {
+  width: 80rem;
   align-items: center;
   justify-content: center;
 }

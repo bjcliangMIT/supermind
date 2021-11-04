@@ -21,11 +21,12 @@ export default class InstructionGroupify extends React.Component {
           </p>
 
           <p>
-            <button type="button" onClick={onPrev} disabled={!hasPrev}>
-              Previous
-            </button>
+            
             <button type="button" onClick={onNext}>
               Next
+            </button>
+            <button type="button" onClick={onPrev} disabled={!hasPrev}>
+              Previous
             </button>
           </p>
         </div>

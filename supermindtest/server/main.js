@@ -28,7 +28,7 @@ Empirica.gameInit(game => {
         round.addStage({
           name: 'IntroTask',
           displayName: "IntroTask",
-          durationInSeconds: 10
+          durationInSeconds: 5*60
         });
 
         stage_list.forEach((selected) => {
@@ -40,14 +40,14 @@ Empirica.gameInit(game => {
           round.addStage({
             name: selected, 
             displayName: " ", 
-            durationInSeconds: 10
+            durationInSeconds: 1*60
           });
         });
 
         round.addStage({
           name: 'ExitTask',
           displayName: "ExitTask",
-          durationInSeconds: 10
+          durationInSeconds: 5*60
         });
         
       }

@@ -19,14 +19,17 @@ export default class InstructionStepOne extends React.Component {
             how this theoretical information can be used.</p>
 
           <img src="images/light.jpg" width='300px' />
-          <p>
-            <button type="button" onClick={onPrev} disabled={!hasPrev}>
-              Previous
-            </button>
+          <div className="form-line">
+            
+
             <button type="button" onClick={onNext} disabled={!hasNext}>
               Next
             </button>
-          </p>
+
+            <button type="button" onClick={onPrev} disabled={!hasPrev}>
+              Previous
+            </button>
+          </div>
         </div>
       </Centered>
     );
