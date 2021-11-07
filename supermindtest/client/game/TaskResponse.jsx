@@ -31,7 +31,7 @@ export default class TaskResponse extends React.Component {
     const { player } = this.props;
     player.round.set("value", this.state.solutions);
     //console.log(player.get("answer"))
-    this.props.player.stage.submit(this.state);
+    this.props.player.stage.submit();
   };
 
   renderContent() {
@@ -55,25 +55,31 @@ export default class TaskResponse extends React.Component {
     return (
       <div className="task-response">
         <form onSubmit={this.handleSubmit}>
-          <button type="add" onClick={this.addSolution}>Add a New Solution</button>
-          <br></br><br></br><br></br>
-
           {this.state.solutions.map((solutions, index) => (
             <div key={index}>
               <textarea
                 dir="auto"
                 rows="3"
-                cols="100"
+                cols="90"
                 placeholder='Enter your solution here.'
                 value={solutions}
                 onChange={this.handleText(index)}
               />
-              <button type="delete" onClick={this.handleDelete(index)}>Delete</button>
+
             </div>
           ))
           }
+          <button type="add" onClick={this.addSolution}> Add a New Solution </button>
           <br></br><br></br>
-          <button type="submit">Submit and Proceed to the Next Page</button>
+          <button type="submit"> Submit and Proceed to the Next Page </button>
+
+
+          <div className="colorgrey"> 
+          <p> Reminder: Please submit only when you finish answering.</p>
+          <p> You cannot return to this page once you proceed. </p>
+          </div>
+
+
         </form>
       </div>
     );

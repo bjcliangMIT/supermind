@@ -7,8 +7,7 @@ import {
   TaskStimulusM, 
   TaskStimulusC,
   TaskStimulusE, 
-  TaskStimulusF
-} from "./TaskStimulus";
+} from "./TaskScripts";
 
 import {
   TaskStimulusH_collapsed,
@@ -16,7 +15,33 @@ import {
   TaskStimulusC_collapsed,
   TaskStimulusM_collapsed,
   TaskStimulusE_collapsed,
-} from "./TaskStimulus2";
+  TaskStimulusF,
+  TaskStimulusFinal
+} from "./TaskQuestion";
+
+class TaskF extends React.Component {
+  render() {
+    return (
+      <div className="task">
+        <TaskStimulusF {...this.props} />
+        <TaskResponse {...this.props} />
+      </div>
+    );
+  }
+}
+
+class TaskFinal extends React.Component {
+  render() {
+    return (
+      <div className="task">
+        <TaskStimulusFinal {...this.props} />
+        <TaskResponse {...this.props} />
+      </div>
+    );
+  }
+}
+
+
 
 
 class TaskH extends React.Component {
@@ -34,17 +59,6 @@ class TaskH_intro extends React.Component {
     return (
       <div className="task">
         <TaskStimulusH {...this.props} />
-      </div>
-    );
-  }
-}
-
-class TaskF extends React.Component {
-  render() {
-    return (
-      <div className="task">
-        <TaskStimulusF {...this.props} />
-        <TaskResponse {...this.props} />
       </div>
     );
   }
@@ -137,6 +151,7 @@ export {
   TaskC,
   TaskE,
   TaskF,
+  TaskFinal,
   TaskH_intro,
   TaskD_intro,
   TaskM_intro,

@@ -17,7 +17,7 @@ export default class Consent extends React.Component {
             interactions with our site. The results of our research may be
             presented at scientific meetings or published in scientific
             journals. Clicking on the "AGREE" button indicates that you are at
-            least 18 years of age, and agree to participate voluntary.
+            least 18 years of age, and agree to participate voluntarily.
           </p>
           <br />
           <ConsentButton text="I AGREE" />

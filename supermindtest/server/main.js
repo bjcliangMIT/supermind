@@ -14,40 +14,46 @@ Empirica.gameInit(game => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", "");
 
-
-    var stage_list = ['Hierarchy', 'Democracy', 'Community', 'Market']; 
+    var list1 = ['Hierarchy', 'Democracy', 'Community', 'Market']; 
+    var list2 = ['Hierarchy', 'Democracy', 'Market', 'Community']; 
+    var list3 = ['Hierarchy', 'Community', 'Market', 'Democracy'];
+    var list4 = ['Hierarchy', 'Community', 'Democracy', 'Market'];  
+    var list5 = ['Hierarchy', 'Market', 'Democracy', 'Community']; 
+    var list6 = ['Hierarchy', 'Market', 'Community', 'Democracy']; 
+    var stage_list = [list1, list2, list3, list4, list5, list6]
 
     _.times(1, i => {
       const round = game.addRound();
       //const time = 5*60*10000;
-      //const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
+      const multiplier = 0.05
+      const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
       //const stage_selected = "Ecosystem"
 
       if(game.treatment.isGroupify==true){
         
         round.addStage({
-          name: 'IntroTask',
-          displayName: "IntroTask",
-          durationInSeconds: 5*60
+          name: 'start',
+          displayName: "Task",
+          durationInSeconds: 5*60*multiplier
         });
 
-        stage_list.forEach((selected) => {
+        stage_selected.forEach((selected) => {
           round.addStage({
             name: selected+"_script",
             displayName: selected,
-            durationInSeconds: 2*60
+            durationInSeconds: 2*60*multiplier
           });
           round.addStage({
             name: selected, 
             displayName: " ", 
-            durationInSeconds: 1*60
+            durationInSeconds: 2*60*multiplier
           });
         });
 
         round.addStage({
-          name: 'ExitTask',
-          displayName: "ExitTask",
-          durationInSeconds: 5*60
+          name: 'end',
+          displayName: "Final Task",
+          durationInSeconds: 5*60*multiplier
         });
         
       }

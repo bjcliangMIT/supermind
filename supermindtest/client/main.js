@@ -1,16 +1,18 @@
 import Empirica from "meteor/empirica:core";
 import { render } from "react-dom";
-import ExitSurvey from "./exit/ExitSurvey";
+
 import Thanks from "./exit/Thanks";
 import Sorry from "./exit/Sorry";
-import About from "./game/About";
 import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
-import InstructionGroupify from "./intro/InstructionGroupify";
-import Quiz from "./intro/Quiz";
+//import InstructionGroupify from "./intro/InstructionGroupify";
+//import Quiz from "./intro/Quiz";
+//import About from "./game/About";
 import NewPlayer from "./intro/NewPlayer";
-import IntroSurvey from "./intro/IntroSurvey";
+
+import GameSurvey from "./exit/GameSurvey";
+import DemoSurvey from "./exit/DemoSurvey";
 
 // Set the About Component you want to use for the About dialog (optional).
 //Empirica.about(About);
@@ -27,9 +29,7 @@ Empirica.newPlayer(NewPlayer);
 // different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment, player) => {
 const steps = [InstructionStepOne];
-  if (treatment.isGroupify==true) {
-    steps.push(InstructionGroupify);
-  }
+  //if (treatment.isGroupify==true) {steps.push(InstructionGroupify);}
   return steps;
 });
 
@@ -55,7 +55,7 @@ Empirica.exitSteps((game, player) => {
   ) {
     return [Sorry];
   }
-  return [ExitSurvey, IntroSurvey, Thanks];
+  return [GameSurvey, DemoSurvey, Thanks];
 });
 
 // Start the app render tree.

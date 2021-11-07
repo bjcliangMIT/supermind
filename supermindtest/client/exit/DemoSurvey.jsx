@@ -31,27 +31,20 @@ export default class IntroSurvey extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    if (this.state.age < 18 || this.state.age > 100) {
-      alert("Please try again and enter a valid age.");
-    } else {
-      //this.props.onNext();
-      this.props.onSubmit(this.state);
-    }
+    this.props.onSubmit(this.state);
   };
 
   render() {
     const { player } = this.props;
     const { age, gender, education, race, employed, government, polviews, relevant } = this.state;
-    console.log(player);
 
     return (
       <Centered>
         <div className="intro-survey">
           <h1> Demographics Survey </h1>
           <p>
-            Please answer the following short survey. You do not have to provide
-            any information you feel uncomfortable with.
+          Please answer the following short survey. 
+          You do not have to provide any information that you feel uncomfortable providing.
           </p>
           <form onSubmit={this.handleSubmit}>
             <ol type="1">
@@ -104,20 +97,20 @@ export default class IntroSurvey extends React.Component {
               </div>
 
               <div>
-                <li><label>Last week, were you working full time, part time,
-                  going to school, keeping house, or what? </label></li>
+                <li><label>How would you describe your employment status last week? </label></li>
                 <select name="employed" id="employed" value={employed} onChange={this.handleChange}>
                   <option value="empty"> </option>
-                  <option value="full-time"> Full Time </option>
-                  <option value="part-time"> Part Time</option>
-                  <option value="school"> Going to School</option>
-                  <option value="house"> Keeping House</option>
+                  <option value="full-time"> Working full-time </option>
+                  <option value="part-time"> Working part-time</option>
+                  <option value="school"> Attending school </option>
+                  <option value="house"> Performing housework </option>
                   <option value="other"> Other</option>
                 </select>
               </div>
 
               <div>
-                <li><label>If you were working last week, which type of industry did you work for?</label></li>
+                <li><label>In the last question, if you described yourself as working full-time or part-time, in what type of 
+                  organization would you categorize yourself as working for?</label></li>
                 <select name="government" id="government" value={government} onChange={this.handleChange}>
                   <option value="empty"> </option>
                   <option value="profit"> For-Profit </option>
@@ -128,7 +121,7 @@ export default class IntroSurvey extends React.Component {
               </div>
 
               <div>
-                <li><label>We hear a lot of talk these days about liberals and conservatives.
+                <li><label>
                   Below is a seven-point scale on which the political views that people
                   might hold are arranged from extremely liberal to extremely conservative.
                   Where would you place yourself on this scale?</label></li>

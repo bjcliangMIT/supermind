@@ -23,8 +23,13 @@ export default class NewPlayer extends Component {
       <Centered>
         <div className="instructions">
           <form onSubmit={this.handleSubmit}>
-            <h1>Identification</h1>
-            <p>Please enter your id:</p>
+            <h2>Please create your username below. </h2>
+            <div className="comment">
+              <p>This username is created only as a key for you to restore your progress
+              if you accidently dropped off the experiment.</p>
+              <p>It does not have to include any of your personal information.</p>
+              </div>
+            <br></br>
 
             <input
               dir="auto"
@@ -37,7 +42,6 @@ export default class NewPlayer extends Component {
               autoComplete="off"
             />
 
-            
             <button type="submit">Submit</button>
 
           </form>

@@ -74,6 +74,14 @@
       margin: 3rem 0 0;
       line-height: 1.5;
 
+      .colorgrey{
+        margin-top: 3rem;
+        line-height: 0.8;
+        color:grey;
+        margin-right: 0;
+        float: "right"
+      }
+
       form {
 
         button[type="submit"] {
@@ -83,20 +91,18 @@
         }
 
         button[type="add"] {
-          margin-top: 0.5rem;
+          margin-top: 0rem;
           margin-bottom: 1rem;
-          margin-right: 0;
-          float: right
         }
         div{
-          display: flex;
           button[type="delete"] {
             margin-top: 1rem;
             margin-bottom: 3rem;
             margin-left: 2rem;
           }
           textarea{
-            margin-bottom: 2rem;
+            margin-top: 1rem;
+            
           }
 
         }
@@ -158,7 +164,13 @@ button {
   button[type="button"] {
     margin-right: 0;
     margin-left: 1rem;
-    float: right
+    float: right;
+    
+  }
+  button[type="submit"] {
+    margin-right: 0;
+    margin-left: 3rem;
+
   }
       
 }
@@ -208,10 +220,7 @@ button {
 }
 
 
-.slider{
-  width: 25rem;
-  
-}
+
 
 .exit-survey {
   margin-left: 10rem;
@@ -219,6 +228,10 @@ button {
 
   .form-line {
     display: flex;
+    .slider{
+      width: 25rem;
+      margin-right: 7rem;
+    }
     
 
     & > div {
@@ -283,4 +296,13 @@ button {
 .radio-control{
   padding-left: 20px;
   line-height: 1.1;
+}
+
+.end-test{
+  margin-bottom: -2rem;
+}
+
+.comment{
+  color:grey;
+  line-height: 1;
 }
