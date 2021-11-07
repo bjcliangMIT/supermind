@@ -25,7 +25,7 @@ Empirica.gameInit(game => {
     _.times(1, i => {
       const round = game.addRound();
       //const time = 5*60*10000;
-      const multiplier = 0.05
+      const multiplier = 1
       const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
       //const stage_selected = "Ecosystem"
 

@@ -36,7 +36,7 @@ export default class IntroSurvey extends React.Component {
 
   render() {
     const { player } = this.props;
-    const { age, gender, education, race, employed, government, polviews, relevant } = this.state;
+    const { age, gender, education, race, employed, government, polviews } = this.state;
 
     return (
       <Centered>

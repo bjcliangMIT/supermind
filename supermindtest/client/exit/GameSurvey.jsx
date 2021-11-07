@@ -82,13 +82,13 @@ export default class GameSurvey extends React.Component {
 
   render() {
     const { player } = this.props;
-    const { suggestion, feedback, instruction, relevant, timer_ins,
-      timer_solution, timer_suggestion, whyfeeling } = this.state;
+    const { instruction, relevant, timer_ins, timer_solution, 
+      timer_suggestion, suggestion, feedback} = this.state;
 
-    this.state.feeling_nervous = player.get("feeling_nervous")
-    this.state.feeling_confused = player.get("feeling_confused")
-    this.state.feeling_relaxed = player.get("feeling_relaxed")
-    this.state.feeling_excited = player.get("feeling_excited")
+    //this.state.feeling_nervous = player.get("feeling_nervous")
+    //this.state.feeling_confused = player.get("feeling_confused")
+    //this.state.feeling_relaxed = player.get("feeling_relaxed")
+    //this.state.feeling_excited = player.get("feeling_excited")
 
     return (
       <Centered>
