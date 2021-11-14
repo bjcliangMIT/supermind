@@ -14,7 +14,7 @@ export default class Thanks extends React.Component {
           <h2>Finished!</h2>
 
           <p>
-            Please submit the following code to receive your bonus:{" "}<strong>{player._id}</strong>.
+            Please submit the following code on MTurk to receive your bonus:{" "}<strong>{player._id}</strong>.
           </p>
           <p>
             You final <strong>bonus</strong> is in addition of the{" "}

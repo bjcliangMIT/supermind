@@ -8,7 +8,7 @@ class TaskStimulusH extends React.Component {
 
   render() {
     const { round, stage, player } = this.props;
-    const task_name = "hierarchy"
+    const task_name = "hierarchies"
 
 
     return (
@@ -19,7 +19,7 @@ class TaskStimulusH extends React.Component {
           Many problems are not solved alone,
           but by many humans who have organized themselves in different ways.
           One way is through <b>hierarchies</b>, where group decisions are made
-          by delegating them to individuals in the group. When you are trying
+          by delegating decisions to individuals in the group. When you are trying
           to think of new solutions to a problem, try asking a question like
           “how would the same group of people organized in a hierarchy try to
           solve this problem?” 
@@ -57,7 +57,7 @@ class TaskStimulusD extends React.Component {
   };
   render() {
     const { round, stage, player } = this.props;
-    const task_name = "democracy"
+    const task_name = "democracies"
 
     return (
       <div className="task-stimulus">
@@ -67,10 +67,8 @@ class TaskStimulusD extends React.Component {
            <b> democracies</b>, where group decisions are made by voting. 
           When you are trying to think of new solutions to a problem, 
           try asking a question like “how would the same group of people 
-          organized in a democracy try to solve this problem?” </p>
+          organized in a democracy try to solve this problem?” We present an example below: </p>
 
-        <p>For example, in our earlier problem about improving access to healthy food, 
-          one solution could be:</p>
 
         <p><b>Problem statement</b>: How can people living in a large rural town (~50,000) 
         improve access to healthy food?</p>
@@ -98,7 +96,7 @@ class TaskStimulusM extends React.Component {
   };
   render() {
     const { round, stage, player } = this.props;
-    const task_name = "market"
+    const task_name = "markets"
 
     return (
       <div className="task-stimulus">
@@ -110,16 +108,14 @@ class TaskStimulusM extends React.Component {
           agreements between individual buyers and sellers. 
           When you are trying to think of new solutions to a problem, 
           try asking a question like “how would the same group of people 
-          organized in a market try to solve this problem?” 
+          organized in a market try to solve this problem?” We present an example below:
         </p>
-
-        <p>For example, in our earlier problem about improving access to healthy food, 
-          one solution could be:</p>
 
         <p><b>Problem statement</b>: How can people living in a large rural town (~50,000) 
         improve access to healthy food?</p>
 
-        <p><b>Example solution</b>: <em> Townspeople who grow their own food can sell or barter that food at a weekend neighborhood market.</em>
+        <p><b>Example solution</b>: <em> Townspeople who grow their own food can sell or 
+          barter that food at a weekend neighborhood market.</em>
         </p>
 
         <img src="images/markets.png" width='200px' className="center" />
@@ -141,7 +137,7 @@ class TaskStimulusC extends React.Component {
   };
   render() {
     const { round, stage, player } = this.props;
-    const task_name = "community"
+    const task_name = "communities"
 
     return (
       <div className="task-stimulus">
@@ -154,10 +150,8 @@ class TaskStimulusC extends React.Component {
           When you are trying to think of new solutions to a problem, 
           try asking a question like “how would the same group 
           of people organized in a community try to solve this problem?” 
+          We present an example below:
         </p>
-
-        <p>For example, in our earlier problem about improving access to healthy food, 
-          one solution could be:</p>
 
         <p><b>Problem statement</b>: How can people living in a large rural town (~50,000) 
         improve access to healthy food?</p>
@@ -184,17 +178,22 @@ class TaskStimulusE extends React.Component {
   };
   render() {
     const { round, stage, player } = this.props;
-    const task_name = "ecosystem"
+    const task_name = "ecosystems"
 
     return (
       <div className="task-stimulus">
         <h1> {task_name.toUpperCase()} </h1>
         <p>
         Another way that two or more people can solve problems is through
-          <b> ecosystems</b>,  where group decisions are made by the law of the jungle (whoever has the most power gets what they want) and the survival of the fittest. When you are trying to think of new solutions to a problem, try asking a question like “how would the same group of people organized in an ecosystem try to solve this problem?” In our earlier problem about improving access to healthy food, one solution could be:
+          <b> ecosystems</b>,  where group decisions are made by the law of the jungle 
+          (whoever has the most power gets what they want) and the survival of the fittest. 
+          When you are trying to think of new solutions to a problem, try asking a question 
+          like “how would the same group of people organized in an ecosystem try to solve 
+          this problem?” We present an example below:
 
         </p>
-
+        <p><b>Problem statement</b>: How can people living in a large rural town (~50,000) 
+        improve access to healthy food?</p>
         <p>
           <em>Having the town’s information uploaded to an online ecosystem of grocery companies and food distributors will naturally lead to an increase in food access.</em>
         </p>

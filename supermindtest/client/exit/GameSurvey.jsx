@@ -19,18 +19,25 @@ const Radio = ({ selected, name, value, label, onChange }) => (
 export default class GameSurvey extends React.Component {
   static stepName = "ExitSurvey";
   state = {
-    suggestion: "", fair: "", feedback: "", instruction: "", 
-    timer_ins:"", timer_solution:"", timer_suggestion:"",
-    relevant: "", whyfeeling: "",
-    feeling_nervous: "", feeling_confused: "",
-    feeling_relaxed: "", feeling_excited: ""
+    suggestion: "", fair: "", feedback: "", instruction: "",
+    timer_ins: "", timer_solution: "", timer_suggestion: "",
+    relevant: "",
   };
 
   handleChangeSlider = name => num => {
     const { player } = this.props;
     const value = Math.round(num * 100) / 100;
+    this.setState({ [name]: value });
     player.set(name, value);
   };
+
+  handleChange = event => {
+    const { player } = this.props;
+    const el = event.currentTarget;
+    this.setState({ [el.name]: el.value });
+    player.set(el.name, el.value);
+  };
+
 
   renderSlider(name) {
     const { player } = this.props;
@@ -49,53 +56,45 @@ export default class GameSurvey extends React.Component {
     );
   }
 
-  handleChange = event => {
-    const el = event.currentTarget;
-    this.setState({ [el.name]: el.value });
-    player.set(el.name, el.value);
-  };
 
 
   handleSubmit = event => {
     event.preventDefault();
     if (this.state.instruction && this.state.timer_solution &&
       this.state.timer_ins && this.state.relevant) {
-        this.props.onSubmit(this.state);
-    } 
+      this.props.onSubmit(this.state);
+    }
     else {
       alert("Please answer the first four questions!");
     }
   };
 
-  
 
-  renderLabel = (val) => {
-    if (val === 1) {
-      return "Not at all";
-    }
-    if (val === 5) {
-      return "Very";
-    }
+
+  renderLabel = (a, b, c) => (val) => {
+    if (val === 1) {return a;}
+    if (val === 3) {return b;}
+    if (val === 5) {return c;}
     return val
   };
 
 
   render() {
     const { player } = this.props;
-    const { instruction, relevant, timer_ins, timer_solution, 
-      timer_suggestion, suggestion, feedback} = this.state;
+    const { instruction, relevant, timer_ins, timer_solution,
+      timer_suggestion, suggestion, feedback } = this.state;
 
-    //this.state.feeling_nervous = player.get("feeling_nervous")
-    //this.state.feeling_confused = player.get("feeling_confused")
-    //this.state.feeling_relaxed = player.get("feeling_relaxed")
-    //this.state.feeling_excited = player.get("feeling_excited")
+    this.state.instruction = player.get("instruction")
+    this.state.relevant = player.get("relevant")
+    this.state.timer_ins = player.get("timer_ins")
+    this.state.timer_solution = player.get("timer_solution")
 
     return (
       <Centered>
 
         <div className="exit-survey">
 
-          <h1> Game Survey</h1>
+          <h1> Experiment Survey</h1>
 
           <p>
             Please answer the following short survey. Only the first four questions are required.
@@ -103,23 +102,29 @@ export default class GameSurvey extends React.Component {
 
           <form onSubmit={this.handleSubmit}>
             <ol type="1">
-              <div >
+              <div>
                 <label><li> In general, how hard was it for you to understand and
                   follow the instructions? (required) &nbsp;</li> </label>
-                <select name="instruction" id="instruction" value={instruction} onChange={this.handleChange}>
-                  <option> </option>
-                  <option value="easy"> The instructions were very straightforward and easy to understand. </option>
-                  <option value="ok"> The instructions were straightforward enough; not very easy but understandable. </option>
-                  <option value="hard"> The instructions were not easy to follow, but I managed to do it. </option>
-                  <option value="very hard"> The instructions were very hard to follow, and I am not sure that I understood them correctly. </option>
-                </select>
+                  </div>
+              <div className="form-slider">
+                <Slider 
+                  width= {100}
+                  min={1}
+                  max={5}
+                  stepSize={1}
+                  labelStepSize={1}
+                  onChange={this.handleChangeSlider("instruction")}
+                  value={player.get("instruction")}
+                  labelRenderer={this.renderLabel('easy', 'ok', 'hard')}
+                  hideHandleOnEmpty
+                />
               </div>
 
               <div>
-                <li><label> As best as you can recall, in the past month, have you ever thought about how to solve
-                  problems that are very similar to the three problems that you just saw? (required) </label></li>
-                <select name="relevant" id="relevant" value={relevant} onChange={this.handleChange} >
-                  <option>  </option>
+                <li><label> As far as you can recall, have you ever been thinking
+                  about how to solve a similar problem as the one you just saw? </label></li>
+                <select name="relevant" id="relevant" value={relevant} onChange={this.handleChange}>
+                  <option value="empty"> </option>
                   <option value="always"> Yes, I think about it all the time. </option>
                   <option value="sometimes"> Yes, sometimes. </option>
                   <option value="once"> Hard to tell, maybe once or twice. </option>
@@ -127,24 +132,40 @@ export default class GameSurvey extends React.Component {
                 </select>
               </div>
 
+  
+
               <div>
                 <li><label> Do you think the time given for you to read the instructions was enough? (required) </label></li>
-                <select name="timer_ins" id="timer_ins" value={timer_ins} onChange={this.handleChange} >
-                  <option>  </option>
-                  <option value="fast"> No, I had to rush and was barely able to read thoroughly. </option>
-                  <option value="ok"> About right. </option>
-                  <option value="too_much"> I didn't need this much time to read the instructions. </option>
-                </select>
+              </div>
+              <div className="form-slider">
+                <Slider 
+                  width= {100}
+                  min={1}
+                  max={5}
+                  stepSize={1}
+                  labelStepSize={1}
+                  onChange={this.handleChangeSlider("timer_ins")}
+                  value={player.get("timer_ins")}
+                  labelRenderer={this.renderLabel('too little', 'ok', 'too much')}
+                  hideHandleOnEmpty
+                />
               </div>
 
               <div>
                 <li><label> Do you think the time given for you to think of solutions was enough? (required) </label></li>
-                <select name="timer_solution" id="timer_solution" value={timer_solution} onChange={this.handleChange}> 
-                  <option> </option>
-                  <option value="fast"> No, I had to rush and was barely able to think thoroughly. </option>
-                  <option value="ok"> About right. </option>
-                  <option value="too_much"> I didn't need this much time to think of solutions. </option>
-                </select>
+              </div>
+              <div className="form-slider">
+                <Slider 
+                  width= {100}
+                  min={1}
+                  max={5}
+                  stepSize={1}
+                  labelStepSize={1}
+                  onChange={this.handleChangeSlider("timer_solution")}
+                  value={player.get("timer_solution")}
+                  labelRenderer={this.renderLabel('too little', 'ok', 'too much')}
+                  hideHandleOnEmpty
+                />
               </div>
 
               <div>
@@ -163,6 +184,8 @@ export default class GameSurvey extends React.Component {
                   />
                 </div>
               </div>
+
+
 
 
               <div>

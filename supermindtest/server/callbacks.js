@@ -30,6 +30,7 @@ Empirica.onStageEnd((game, round, stage) => {
     }else{
       player.set("score", prevScore + "\nStage [" + stage_name + "]: " + value);
     }
+    player.round.set("value", "")
     
   });
 });

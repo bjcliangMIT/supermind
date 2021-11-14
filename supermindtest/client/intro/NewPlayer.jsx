@@ -26,8 +26,7 @@ export default class NewPlayer extends Component {
             <h2>Please create your username below. </h2>
             <div className="comment">
               <p>This username is created only as a key for you to restore your progress
-              if you accidently dropped off the experiment.</p>
-              <p>It does not have to include any of your personal information.</p>
+              if you are accidently dropped off the experiment. It does not have to include any of your personal information.</p>
               </div>
             <br></br>
 

@@ -24,17 +24,17 @@ Empirica.gameInit(game => {
 
     _.times(1, i => {
       const round = game.addRound();
-      //const time = 5*60*10000;
-      const multiplier = 1
+      const multiplier = 1;
       const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
-      //const stage_selected = "Ecosystem"
+      const practicetime = game.treatment.practiceTime * 60;
+      const tasktime = game.treatment.taskTime * 60;
 
       if(game.treatment.isGroupify==true){
         
         round.addStage({
           name: 'start',
           displayName: "Task",
-          durationInSeconds: 5*60*multiplier
+          durationInSeconds: tasktime*multiplier
         });
 
         stage_selected.forEach((selected) => {
@@ -46,14 +46,14 @@ Empirica.gameInit(game => {
           round.addStage({
             name: selected, 
             displayName: " ", 
-            durationInSeconds: 2*60*multiplier
+            durationInSeconds: practicetime*multiplier
           });
         });
 
         round.addStage({
           name: 'end',
           displayName: "Final Task",
-          durationInSeconds: 5*60*multiplier
+          durationInSeconds: tasktime*multiplier
         });
         
       }
