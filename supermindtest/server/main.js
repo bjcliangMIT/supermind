@@ -24,7 +24,7 @@ Empirica.gameInit(game => {
 
     _.times(1, i => {
       const round = game.addRound();
-      const multiplier = 1;
+      const multiplier = game.treatment.multiplier;
       const stage_selected = stage_list[Math.floor(Math.random() * stage_list.length)];
       const practicetime = game.treatment.practiceTime * 60;
       const tasktime = game.treatment.taskTime * 60;
