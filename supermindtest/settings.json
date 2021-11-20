@@ -1,3 +1,7 @@
 {"galaxy.meteor.com": {"env": {"MONGO_URL": "mongodb+srv://bjcliang1:TyW6L1zcCArin5Eg@cluster0.csh4f.mongodb.net/supermind_test?retryWrites=true&w=majority"}}, 
-"admins": [{"username": "supermind", "password": "12345"}]
+"admins": [{"username": "supermind", "password": "12345"}],
+"public":{
+    "debug_resetDatabase": true,
+    "debug_gameDebugMode": true
+    }
 }

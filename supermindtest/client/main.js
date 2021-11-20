@@ -6,16 +6,15 @@ import Sorry from "./exit/Sorry";
 import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
-//import InstructionGroupify from "./intro/InstructionGroupify";
 //import Quiz from "./intro/Quiz";
-//import About from "./game/About";
+import About from "./game/About";
 import NewPlayer from "./intro/NewPlayer";
 
 import GameSurvey from "./exit/GameSurvey";
 import DemoSurvey from "./exit/DemoSurvey";
 
 // Set the About Component you want to use for the About dialog (optional).
-//Empirica.about(About);
+Empirica.about(About);
 
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);

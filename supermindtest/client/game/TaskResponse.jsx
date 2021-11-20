@@ -21,7 +21,7 @@ export default class TaskResponse extends React.Component {
 
   addSolution = e => {
     e.preventDefault()
-    let solutions = this.state.solutions.concat([''])
+    let solutions = this.state.solutions.concat(['[New]'])
     this.setState({ solutions })
   }
 

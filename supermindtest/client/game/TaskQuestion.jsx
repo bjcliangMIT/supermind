@@ -10,10 +10,36 @@ class TaskStimulusF extends React.Component {
     const { game, round, stage, player } = this.props;
     return (
       <div className="task-stimulus">
+
         <h1> TASK </h1>
+
+        <details>
+          <summary className="summary"><b> Click here for Instruction Recap </b></summary>
+          <div className="collapse-content">
+            <p>Solutions must address the problem statement and must be <b>at least 10 words</b> long.
+              You are not allowed to use the internet to find solutions.
+              If we find evidence that answers were taken from an outside source, we
+              reserve the right to deny payment. <b>Answers must be your own original ideas</b>.</p>
+            <p>Example: If our problem statement is "I want to improve how we teach Calculus in my high school,"
+              then two example solutions could be </p>
+            <ul>
+              <li>(1) "teachers could specialize in which Calculus subjects
+                they teach, like with one teacher focusing on derivatives, and another teacher focusing on integrals,"
+                and </li>
+              <li>(2) "the school principal can divert school funding to have more public computers so
+                that students can use online resources for extra teaching and practice problems."</li>
+            </ul>
+          </div>
+        </details>
+
+        <br></br>
+
+
         <p> Below is a problem statement that we want solutions for.
           In <b>{game.treatment.taskTime} mins</b>, please list as many creative solutions to the
-          problem as you can think of. </p>
+          problem as you can think of. We will reward those based on whether they present many solutions and whether
+          those solutions they give us are very creative.</p>
+      
         <p>
           <b>Problem Statement</b>: <em>{game.treatment.taskQ}</em>
         </p>
