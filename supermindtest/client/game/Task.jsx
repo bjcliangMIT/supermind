@@ -1,6 +1,13 @@
 import React from "react";
 
 import TaskResponse from "./TaskResponse";
+
+import {
+  CThierarchy, CTCommunity, CTDemocracy, CTMarket 
+} from "./Comprehension";
+
+
+
 import {
   TaskStimulusH, 
   TaskStimulusD, 
@@ -42,8 +49,6 @@ class TaskFinal extends React.Component {
 }
 
 
-
-
 class TaskH extends React.Component {
   render() {
     return (
@@ -59,6 +64,7 @@ class TaskH_intro extends React.Component {
     return (
       <div className="task">
         <TaskStimulusH {...this.props} />
+        <CThierarchy {...this.props} />
       </div>
     );
   }
@@ -79,6 +85,7 @@ class TaskD_intro extends React.Component {
     return (
       <div className="task">
         <TaskStimulusD {...this.props} />
+        <CTDemocracy {...this.props} />
       </div>
     );
   }
@@ -99,6 +106,7 @@ class TaskM_intro extends React.Component {
     return (
       <div className="task">
         <TaskStimulusM {...this.props} />
+        <CTMarket {...this.props} />
       </div>
     );
   }
@@ -119,6 +127,7 @@ class TaskC_intro extends React.Component {
     return (
       <div className="task">
         <TaskStimulusC {...this.props} />
+        <CTCommunity {...this.props} />
       </div>
     );
   }

@@ -40,9 +40,6 @@ class TaskStimulusH extends React.Component {
 
         <img src="images/hierarchies.png" width='200px' className="center" />
 
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit">Next</button>
-        </form>
 
       </div>
     );
@@ -79,10 +76,6 @@ class TaskStimulusD extends React.Component {
 
         <img src="images/democracies.png" width='200px' className="center" />
 
-
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit">Next</button>
-        </form>
 
       </div>
     );
@@ -121,9 +114,6 @@ class TaskStimulusM extends React.Component {
         <img src="images/markets.png" width='200px' className="center" />
 
 
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit">Next</button>
-        </form>
 
       </div>
     );
@@ -162,9 +152,6 @@ class TaskStimulusC extends React.Component {
         <img src="images/communities.png" width='200px' className="center" />
 
 
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit">Next</button>
-        </form>
 
       </div>
     );
@@ -201,9 +188,6 @@ class TaskStimulusE extends React.Component {
         <img src="images/ecosystem.png" width='200px' className="center" />
 
 
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit">Next</button>
-        </form>
 
       </div>
     );

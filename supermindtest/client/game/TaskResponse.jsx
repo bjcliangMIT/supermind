@@ -2,7 +2,7 @@ import React from "react";
 export default class TaskResponse extends React.Component {
   state = { solutions: [''] }
 
-  handleText = i => async(e) => {
+  handleText = i => async (e) => {
     let solutions = [...this.state.solutions]
     solutions[i] = e.target.value
     await this.setState({ solutions })
@@ -21,7 +21,7 @@ export default class TaskResponse extends React.Component {
 
   addSolution = e => {
     e.preventDefault()
-    let solutions = this.state.solutions.concat(['[New]'])
+    let solutions = this.state.solutions.concat([''])
     this.setState({ solutions })
   }
 
@@ -49,23 +49,22 @@ export default class TaskResponse extends React.Component {
 
   renderSubmit() {
     const { game, player, stage } = this.props;
-    if (game.treatment.submitShow) {
-      return (
-        <div>
-          <button type="submit"> Submit and Proceed to the Next Page </button>
-          <span className="colorgrey">
-            <p> Reminder: Please submit only when you finish answering.</p>
-            <p> You cannot return to this page once you proceed.</p>
-          </span>
-        </div>
-      )
-    }
+    return (
+      <div>
+        <button type="submit"> Submit and Proceed to the Next Page </button>
+        <span className="colorgrey">
+          <p> Reminder: Please submit only when you finish answering.</p>
+          <p> You cannot return to this page once you proceed.</p>
+        </span>
+      </div>
+    )
+
   }
 
 
   render() {
     const { game, player, stage } = this.props;
-    
+
     return (
       <div className="task-response">
         <form onSubmit={this.handleSubmit}>
@@ -85,7 +84,9 @@ export default class TaskResponse extends React.Component {
           }
           <button type="add" onClick={this.addSolution}> Add a New Solution </button>
           <br></br><br></br>
-          {this.renderSubmit()}
+
+          {stage.name !== "start" && stage.name !== "end" && this.renderSubmit()}
+          <br></br>
 
         </form>
       </div>
