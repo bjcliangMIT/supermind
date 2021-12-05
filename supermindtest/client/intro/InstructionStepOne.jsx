@@ -31,8 +31,8 @@ export default class InstructionStepOne extends React.Component {
 
           <h3> &#8594; Requirements </h3>
 
-          <p> Solutions must address the problem statement and must be <b>at least 10 words</b> long.
-            You are <b>not</b> allowed to use the internet to find solutions.
+          <p> Solutions must address the problem statement and you 
+            are <b>not</b> allowed to use the internet to find solutions.
             If we find evidence that answers were taken from an outside source,
             or that answers are incomplete, we reserve the right to deny payment. <b>Answers
               must be your own original ideas</b>.</p>

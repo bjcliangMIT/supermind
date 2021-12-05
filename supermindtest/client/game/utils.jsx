@@ -10,6 +10,7 @@ const activity_statement3 = "to create as many creative solutions as you can. \
 You are encouraged to use your understanding of ";
 const activity_statement4 = " in your solutions.";
 
+
 export const activity_statement = (timenum, name)=> {
   time = "";
   if(timenum === 1){

@@ -41,6 +41,7 @@ class TaskStimulusH extends React.Component {
         <img src="images/hierarchies.png" width='200px' className="center" />
 
 
+
       </div>
     );
   }
